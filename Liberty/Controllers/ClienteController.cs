@@ -14,7 +14,7 @@ namespace Liberty.Controllers
         {
             MongoDbContext dbContext = new MongoDbContext();
             List<Cliente> listClientes = dbContext.Cliente.Find(m => true).ToList();
-            return View(listClientes);
+            return View();
         }
         
         [HttpPost]

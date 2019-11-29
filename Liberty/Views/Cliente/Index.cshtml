@@ -1,4 +1,5 @@
-﻿
+﻿@model Cliente
+
 @{
     ViewData["Title"] = "Cliente";
 }
@@ -7,11 +8,11 @@
 
 @using (Html.BeginForm("Add", "Cliente", FormMethod.Post))
 {
-    
+
     <div>Cliente:</div>
-    @Html.TextBox("entity" )
-        
-        <input type="submit" value="Add" />
-    
+    @Html.TextBoxFor(a => a.Nome)
+
+    <input type="submit" value="Add" />
+
 }
 
