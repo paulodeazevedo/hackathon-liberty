@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Cliente";
+}
+
+<h1>Cliente</h1>
+
+@using (Html.BeginForm("Add", "Cliente", FormMethod.Post))
+{
+    
+    <div>Cliente:</div>
+    @Html.TextBox("entity" )
+        
+        <input type="submit" value="Add" />
+    
+}
+

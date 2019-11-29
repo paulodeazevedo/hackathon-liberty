@@ -24,6 +24,10 @@ namespace Liberty
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+            MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:Database").Value;
+            MongoDbContext.IsSSL = Convert.ToBoolean(this.Configuration.GetSection("MongoConnection:IsSSL").Value);
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
