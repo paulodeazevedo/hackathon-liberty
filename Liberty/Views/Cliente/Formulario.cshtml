@@ -11,7 +11,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nome: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control", maxlength = "100"})
         </div>
     </div>
     <div class="form-group row">
@@ -23,7 +23,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Sexo: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Segurado.Sexo, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Segurado.Sexo, new { @class = "form-control", maxlength = "1" })
         </div>
     </div>
     <div class="form-group row">
@@ -35,7 +35,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Estado Civil: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Segurado.EstadoCivil, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Segurado.EstadoCivil, new { @class = "form-control", maxlength = "15" })
         </div>
     </div>
     <div class="form-group row">
@@ -53,7 +53,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nome: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Condutor.Nome, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Condutor.Nome, new { @class = "form-control", maxlength = "100" })
         </div>
     </div>
     <div class="form-group row">
@@ -83,13 +83,13 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Sexo: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Condutor.Sexo, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Condutor.Sexo, new { @class = "form-control", maxlength = "1"})
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Estado Civil: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Condutor.EstadoCivil, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Condutor.EstadoCivil, new { @class = "form-control", maxlength = "15" })
         </div>
     </div>
 
@@ -101,7 +101,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Reside em: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.ResideEm, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.ResideEm, new { @class = "form-control", maxlength = "100"  })
         </div>
     </div>
     <div class="form-group row">
@@ -113,37 +113,37 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Garagem Residencial: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.GaragemResidencial, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.GaragemResidencial, new { @class = "form-control", maxlength = "3" })
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Garagem Comercial: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.GaragemComercial, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.GaragemComercial, new { @class = "form-control", maxlength = "3" })
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Garagem Cursos: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.GaragemCursos, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.GaragemCursos, new { @class = "form-control", maxlength = "3" })
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Distancia Residencia Trabalho: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.DistanciaResidenciaTrabalho, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.DistanciaResidenciaTrabalho, new { @class = "form-control", maxlength = "20" })
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Reside Pessoa entre 17 e 21 anos : </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.ResidePessoas, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.ResidePessoas, new { @class = "form-control", maxlength = "3" })
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Tem Habilitação: </label>
+        <label class="col-sm-2 col-form-label">Tempo de Habilitação: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Questionario.TempoHabilitacao, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Questionario.TempoHabilitacao, new { @class = "form-control", maxlength = "20" })
         </div>
     </div>
 
@@ -155,19 +155,19 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">0 Km: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Veiculo.ZeroKm, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Veiculo.ZeroKm, new { @class = "form-control", maxlength = "100" })
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Modelo: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Veiculo.Modelo, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Veiculo.Modelo, new { @class = "form-control", maxlength = "100"})
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Chassi: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Veiculo.Chassi, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Veiculo.Chassi, new { @class = "form-control",  maxlength = "15"})
         </div>
     </div>
     <div class="form-group row">
@@ -198,7 +198,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <br />
@@ -209,7 +209,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">E-mail: </label>
         <div class="col-sm-10">
-            @Html.TextBoxFor(model => model.Segurado.Email, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.Segurado.Email, new { @class = "form-control", maxlength = "100" })
         </div>
     </div>
     <div class="form-group row">
@@ -227,3 +227,21 @@
 }
 
 
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Segurado_Telefone").mask("(99) 99999-9999");
+        $("#Segurado_Cep").mask("9999999-999");
+        $("#Segurado_Cpf").mask("999.999.999-99");
+        $("#Segurado_DataNascimento").mask("99/99/9999");
+        $("#Veiculo_Ano").mask("9999");
+        $("#Veiculo_Placa").mask("AAA-9999");
+        $("#Questionario_CepPernoiteVeiculo").mask("9999999-999");
+        $("#Condutor_Cpf").mask("999.999.999-99");
+        $("#Condutor_Cnh").mask("999999999999999");
+        $("#Condutor_Cep").mask("9999999-999");
+        $("#Condutor_DataNascimento").mask("99/99/9999");
+    });
+
+
+</script>
