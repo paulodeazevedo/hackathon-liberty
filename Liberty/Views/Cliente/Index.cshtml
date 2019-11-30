@@ -57,12 +57,9 @@
         <div class="form-check">
             <div>
                 @Html.RadioButtonFor(model => model.EnviarFormulario, "Sim", new { @class = "form-check-input" })
-                <label class="form-check-label">
+                <label class="form-check-label" style="margin-right:30px">
                     Sim
-                </label>
-            </div>
-
-            <div>
+                </label>            
                 @Html.RadioButtonFor(model => model.EnviarFormulario, "Não", new { @class = "form-check-input" })
                 <label class="form-check-label">
                     Não

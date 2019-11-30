@@ -6,52 +6,227 @@
 <h1>Formulario</h1>
 @using (Html.BeginForm("Upload", "Cliente", FormMethod.Post))
 {
-    <div>Dados Segurado</div>
+    <br />
+    <br />
+    <h3>Dados Segurado</h3>
+    <br />
 
-    @Html.TextBoxFor(model => model.Segurado.Nome)
-    @Html.TextBoxFor(model => model.Segurado.Cpf)
-    @Html.TextBoxFor(model => model.Segurado.Sexo)
-    @Html.TextBoxFor(model => model.Segurado.DataNascimento)
-    @Html.TextBoxFor(model => model.Segurado.EstadoCivil)
-    @Html.TextBoxFor(model => model.Segurado.Cep)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nome: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CPF: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Cpf, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Sexo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Sexo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Data Nasc.: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.DataNascimento, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Estado Civil: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.EstadoCivil, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CEP: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Cep, new { @class = "form-control" })
+        </div>
+    </div>
 
+    <br />
+    <br />
+    <h3>Dados Condutor</h3>
+    <br />
 
-    <div>Dados Condutor</div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nome: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Nome, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CPF: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Cpf, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CNH: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Cnh, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CEP: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Cep, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Data Nascimento: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.DataNascimento, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Sexo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Sexo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Estado Civil: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.EstadoCivil, new { @class = "form-control" })
+        </div>
+    </div>
 
-    @Html.TextBoxFor(model => model.Condutor.Nome)
-    @Html.TextBoxFor(model => model.Condutor.Cpf)
-    @Html.TextBoxFor(model => model.Condutor.Cnh)
-    @Html.TextBoxFor(model => model.Condutor.Cep)
-    @Html.TextBoxFor(model => model.Condutor.DataNascimento)
-    @Html.TextBoxFor(model => model.Condutor.Sexo)
-    @Html.TextBoxFor(model => model.Condutor.EstadoCivil)
+    <br />
+    <br />
+    <h3>Questionário de Risco</h3>
+    <br />
 
-    <div>Questionário de Risco</div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Reside em: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.ResideEm, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Cep Pernoite Veiculo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.CepPernoiteVeiculo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Garagem Residencial: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.GaragemResidencial, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Garagem Comercial: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.GaragemComercial, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Garagem Cursos: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.GaragemCursos, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Distancia Residencia Trabalho: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.DistanciaResidenciaTrabalho, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Reside Pessoa entre 17 e 21 anos : </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.ResidePessoas, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Tem Habilitação: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.TempoHabilitacao, new { @class = "form-control" })
+        </div>
+    </div>
 
-    @Html.TextBoxFor(model => model.Questionario.ResideEm)
-    @Html.TextBoxFor(model => model.Questionario.CepPernoiteVeiculo)
-    @Html.TextBoxFor(model => model.Questionario.GaragemResidencial)
-    @Html.TextBoxFor(model => model.Questionario.GaragemComercial)
-    @Html.TextBoxFor(model => model.Questionario.GaragemCursos)
-    @Html.TextBoxFor(model => model.Questionario.DistanciaResidenciaTrabalho)
-    @Html.TextBoxFor(model => model.Questionario.ResidePessoas)
-    @Html.TextBoxFor(model => model.Questionario.TempoHabilitacao)
+    <br />
+    <br />
+    <h3>Veículo Segurado</h3>
+    <br />
 
-    <div>Veículo Segurado</div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">0 Km: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.ZeroKm, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Modelo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Modelo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Chassi: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Chassi, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Placa: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Placa, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Ano: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Ano, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Possui Alarme: </label>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <div>
+                    @Html.RadioButtonFor(model => model.Veiculo.PossuiAlarme, "Sim", new { @class = "form-check-input" })
+                    <label class="form-check-label" style="margin-right:30px">
+                        Sim
+                    </label>
+                    @Html.RadioButtonFor(model => model.Veiculo.PossuiAlarme, "Não", new { @class = "form-check-input" })
+                    <label class="form-check-label">
+                        Não
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
-    @Html.TextBoxFor(model => model.Veiculo.ZeroKm)
-    @Html.TextBoxFor(model => model.Veiculo.Modelo)
-    @Html.TextBoxFor(model => model.Veiculo.Chassi)
-    @Html.TextBoxFor(model => model.Veiculo.Placa)
-    @Html.TextBoxFor(model => model.Veiculo.Ano)
-    @Html.TextBoxFor(model => model.Veiculo.PossuiAlarme)
+    <br />
+    <br />
+    <h3>Dados para Contato</h3>
+    <br />
 
-    <div>Dados para Contato</div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">E-mail: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Telefone: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Telefone, new { @class = "form-control" })
+        </div>
+    </div>
 
-    @Html.TextBoxFor(model => model.Segurado.Email)
-    @Html.TextBoxFor(model => model.Segurado.Telefone)
-
-       <input type="submit" value="Enviar" />
+    <div class="form-group row " style="float:right">
+        <div class="col-sm-10">
+            <input type="submit" class="btn btn-primary" value="Enviar" />
+        </div>
+    </div>
 }
 
 
