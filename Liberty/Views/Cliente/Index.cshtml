@@ -9,26 +9,64 @@
 @using (Html.BeginForm("Add", "Cliente", FormMethod.Post))
 {
 
-    <div>Nome: @Html.TextBoxFor(a => a.Segurado.Nome)</div>
-
-    <div>Telefone: @Html.TextBoxFor(a => a.Segurado.Telefone)</div>
-
-    <div>Email: @Html.TextBoxFor(a => a.Segurado.Email)</div>
-
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Nome: </label>
+        <div class="col-sm-11">
+            @Html.TextBoxFor(a => a.Segurado.Nome, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Telefone: </label>
+        <div class="col-sm-11">
+            @Html.TextBoxFor(a => a.Segurado.Telefone, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Email: </label>
+        <div class="col-sm-11">
+            @Html.TextBoxFor(a => a.Segurado.Email, new { @class = "form-control" })
+        </div>
+    </div>
     <div>Veículo</div>
-    <div>Marca: @Html.TextBoxFor(a => a.Veiculo.Marca)</div>
-
-    <div>Modelo: @Html.TextBoxFor(a => a.Veiculo.Modelo)</div>
-
-    <div>Ano: @Html.TextBoxFor(a => a.Veiculo.Ano)</div>
-
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Marca: </label>
+        <div class="col-sm-11">
+            @Html.TextBoxFor(a => a.Segurado.Veiculo.Marca, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Modelo: </label>
+        <div class="col-sm-11">
+            @Html.TextBoxFor(a => a.Segurado.Veiculo.Modelo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Ano: </label>
+        <div class="col-sm-11">
+            @Html.TextBoxFor(a => a.Segurado.Veiculo.Ano, new { @class = "form-control" })
+        </div>
+    </div>
     <div>Deseja enviar os seus dados para o Corretor neste momento?</div>
-
-    @Html.RadioButtonFor(model => model.EnviarFormulario, "Sim")
-
-    @Html.RadioButtonFor(model => model.EnviarFormulario, "Não")
-
-
-    <input type="submit" value="Add" />
+    <div class="col-sm-10">
+        <div class="form-check">
+            @Html.RadioButtonFor(model => model.EnviarFormulario, "Sim", new { @class = "form-check-input" })
+            <label class="form-check-label">
+                Sim
+            </label>
+        </div>
+    </div>
+    <div class="col-sm-10">
+        <div class="form-check">
+            @Html.RadioButtonFor(model => model.EnviarFormulario, "Não", new { @class = "form-check-input" })
+            <label class="form-check-label">
+                Não
+            </label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <input type="submit" class="btn btn-primary" value="Add" />
+        </div>
+    </div>
 }
 
