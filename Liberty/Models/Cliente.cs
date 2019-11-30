@@ -16,6 +16,8 @@ namespace Liberty.Models
         public QuestionarioRisco Questionario { get; set; }
         public Veiculo Veiculo { get; set; }
         public string EnviarFormulario { get; set; }
+
+        public Lead Lead { get; set; }
     }
 
     public class DadosCliente
@@ -55,5 +57,16 @@ namespace Liberty.Models
         public string DistanciaResidenciaTrabalho { get; set; }
         public string GaragemCursos { get; set; }
         public string ResidePessoas { get; set; }
+    }
+
+    public class Lead
+    {
+        public DateTime VencimentoLead { get; set; }
+        public DateTime CriacaoLead { get; set; }
+        public int IdCorretorResponsavel { get; set; }
+        public string NomeCorretor { get; set; }
+        public string EmailCorretor { get; set; }
+        public string StatusLead { get; set; }
+        public string Ramo { get; set; }
     }
 }
