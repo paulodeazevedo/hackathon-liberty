@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,16 +8,12 @@ namespace Liberty.Models
 {
     public class Cliente
     {
-        public Guid Id { get; set; }
-        
+        [MongoDB.Bson.Serialization.Attributes.BsonId]
+        public ObjectId Id { get; set; }
         public DadosCliente Segurado { get; set; }
-
         public DadosCliente Condutor { get; set; }
-
         public QuestionarioRisco Questionario { get; set; }
-
         public Veiculo Veiculo { get; set; }
-
         public string EnviarFormulario { get; set; }
     }
 
@@ -30,8 +27,8 @@ namespace Liberty.Models
         public string Cpf { get; set; }
         public string DataNascimento { get; set; }
         public string EstadoCivil { get; set; }
-        public string CepResidencial { get; set; }
-        public string Documento { get; set; }
+        public string Cnh { get; set; }
+        public string Sexo { get; set; }
     }
 
     public class Veiculo
@@ -41,6 +38,9 @@ namespace Liberty.Models
         public string Modelo { get; set; }
         public string ZeroKm { get; set; }
         public string PossuiAlarme { get; set; }
+        public string Chassi { get; set; }
+        public string Placa { get; set; }
+
 
     }
 

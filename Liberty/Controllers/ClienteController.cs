@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Liberty.Models;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Liberty.Controllers
@@ -14,16 +16,32 @@ namespace Liberty.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public IActionResult Add(Cliente entity)
         {
             MongoDbContext dbContext = new MongoDbContext();
-            entity.Id = Guid.NewGuid();
-            dbContext.Cliente.InsertOne(entity);
+            //entity.Id = Guid.NewGuid();
+            if (!string.IsNullOrWhiteSpace(entity.EnviarFormulario) && entity.EnviarFormulario.Equals("Sim"))
+            {
+                return View("Formulario", entity);
+            }
+            else
+            {
+                dbContext.Cliente.InsertOne(entity);
+            }
+
             return RedirectToAction("Index", "Cliente");
         }
-        
+
+        [HttpPost]
+        public IActionResult Upload(Cliente entity)
+        {
+            MongoDbContext dbContext = new MongoDbContext();
+            dbContext.Cliente.InsertOne(entity);
+            return View();
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {

@@ -1,0 +1,57 @@
+﻿@model Cliente
+@{
+    ViewData["Title"] = "Formulario";
+}
+
+<h1>Formulario</h1>
+@using (Html.BeginForm("Upload", "Cliente", FormMethod.Post))
+{
+    <div>Dados Segurado</div>
+
+    @Html.TextBoxFor(model => model.Segurado.Nome)
+    @Html.TextBoxFor(model => model.Segurado.Cpf)
+    @Html.TextBoxFor(model => model.Segurado.Sexo)
+    @Html.TextBoxFor(model => model.Segurado.DataNascimento)
+    @Html.TextBoxFor(model => model.Segurado.EstadoCivil)
+    @Html.TextBoxFor(model => model.Segurado.Cep)
+
+
+    <div>Dados Condutor</div>
+
+    @Html.TextBoxFor(model => model.Condutor.Nome)
+    @Html.TextBoxFor(model => model.Condutor.Cpf)
+    @Html.TextBoxFor(model => model.Condutor.Cnh)
+    @Html.TextBoxFor(model => model.Condutor.Cep)
+    @Html.TextBoxFor(model => model.Condutor.DataNascimento)
+    @Html.TextBoxFor(model => model.Condutor.Sexo)
+    @Html.TextBoxFor(model => model.Condutor.EstadoCivil)
+
+    <div>Questionário de Risco</div>
+
+    @Html.TextBoxFor(model => model.Questionario.ResideEm)
+    @Html.TextBoxFor(model => model.Questionario.CepPernoiteVeiculo)
+    @Html.TextBoxFor(model => model.Questionario.GaragemResidencial)
+    @Html.TextBoxFor(model => model.Questionario.GaragemComercial)
+    @Html.TextBoxFor(model => model.Questionario.GaragemCursos)
+    @Html.TextBoxFor(model => model.Questionario.DistanciaResidenciaTrabalho)
+    @Html.TextBoxFor(model => model.Questionario.ResidePessoas)
+    @Html.TextBoxFor(model => model.Questionario.TempoHabilitacao)
+
+    <div>Veículo Segurado</div>
+
+    @Html.TextBoxFor(model => model.Veiculo.ZeroKm)
+    @Html.TextBoxFor(model => model.Veiculo.Modelo)
+    @Html.TextBoxFor(model => model.Veiculo.Chassi)
+    @Html.TextBoxFor(model => model.Veiculo.Placa)
+    @Html.TextBoxFor(model => model.Veiculo.Ano)
+    @Html.TextBoxFor(model => model.Veiculo.PossuiAlarme)
+
+    <div>Dados para Contato</div>
+
+    @Html.TextBoxFor(model => model.Segurado.Email)
+    @Html.TextBoxFor(model => model.Segurado.Telefone)
+
+       <input type="submit" value="Enviar" />
+}
+
+
