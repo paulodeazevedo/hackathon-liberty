@@ -9,8 +9,19 @@
 @using (Html.BeginForm("Add", "Cliente", FormMethod.Post))
 {
 
-    <div>Cliente:</div>
-    @Html.TextBoxFor(a => a.Nome)
+    <div>Nome: @Html.TextBoxFor(a => a.DadosCliente.Nome)</div>
+
+    <div>Telefone: @Html.TextBoxFor(a => a.DadosCliente.Telefone)</div>
+
+    <div>Email: @Html.TextBoxFor(a => a.DadosCliente.Email)</div>
+
+    <div>Veículo</div>
+    <div>Marca: @Html.TextBoxFor(a => a.DadosCliente.Veiculo.Marca)</div>
+
+    <div>Modelo: @Html.TextBoxFor(a => a.DadosCliente.Veiculo.Modelo)</div>
+
+    <div>Ano: @Html.TextBoxFor(a => a.DadosCliente.Veiculo.Ano)</div>
+
 
     <input type="submit" value="Add" />
 

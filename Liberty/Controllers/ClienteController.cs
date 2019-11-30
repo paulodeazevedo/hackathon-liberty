@@ -12,8 +12,6 @@ namespace Liberty.Controllers
     {
         public IActionResult Index()
         {
-            MongoDbContext dbContext = new MongoDbContext();
-            List<Cliente> listClientes = dbContext.Cliente.Find(m => true).ToList();
             return View();
         }
         
@@ -24,6 +22,14 @@ namespace Liberty.Controllers
             entity.Id = Guid.NewGuid();
             dbContext.Cliente.InsertOne(entity);
             return RedirectToAction("Index", "Cliente");
+        }
+        
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            MongoDbContext dbContext = new MongoDbContext();
+            List<Cliente> listClientes = dbContext.Cliente.Find(_ => true).ToList();
+            return View("GetAll", listClientes);
         }
     }
 }
