@@ -54,7 +54,7 @@ namespace Liberty
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=AtendimentoLead}/{action=Index}/{id?}");
+                    pattern: "{controller=AtendimentoLead}/{action=Atendimento}/{id?}");
             });
         }
     }

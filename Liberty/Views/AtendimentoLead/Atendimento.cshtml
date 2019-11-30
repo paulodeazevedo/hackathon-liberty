@@ -1,0 +1,140 @@
+﻿@model Cliente
+
+@{
+    ViewData["Title"] = "Atendimento";
+}
+
+
+<h1>Atendimento</h1>
+
+<div class="form-group">
+    <div>Dados Segurado</div>
+    <div class="form-inline">
+        <label>Nome Segurado</label>
+        @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-inline">
+        <label>CPF</label>
+        @Html.Label(Model.Segurado.Cpf)
+    </div>
+    <div class="form-inline">
+        <label>Sexo</label>
+        @Html.Label(Model.Segurado.Sexo)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Segurado.DataNascimento)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Segurado.EstadoCivil)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Segurado.Cep)
+    </div>
+
+    <div>Dados Condutor</div>
+
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.Nome)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.Cpf)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.Cnh)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.Cep)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.DataNascimento)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.Sexo)
+    </div>
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Condutor.EstadoCivil)
+    </div>
+
+    <div>Questionário de Risco</div>
+
+    <div class="form-inline">
+        <label></label>
+        @Html.Label(Model.Questionario.ResideEm)
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.CepPernoiteVeiculo)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.GaragemResidencial)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.GaragemComercial)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.GaragemCursos)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.DistanciaResidenciaTrabalho)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.ResidePessoas)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Questionario.TempoHabilitacao)
+        </div>
+
+        <div>Veículo Segurado</div>
+
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Veiculo.ZeroKm)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Veiculo.Modelo)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Veiculo.Chassi)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Veiculo.Placa)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Veiculo.Ano)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Veiculo.PossuiAlarme)
+        </div>
+
+        <div>Dados para Contato</div>
+
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Segurado.Email)
+        </div>
+        <div class="form-inline">
+            <label></label>
+            @Html.Label(Model.Segurado.Telefone)
+        </div>
+    </div>
+</div>
