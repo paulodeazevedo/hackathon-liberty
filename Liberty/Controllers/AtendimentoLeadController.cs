@@ -53,7 +53,7 @@ namespace Liberty.Controllers
                 .OrderBy(x => x.Lead.VencimentoLead != null)
                 .ToList();
 
-            return View("AtendimentoEmAndamento");
+            return View("AtendimentoEmAndamento", listClientes);
         }
     }
 }
