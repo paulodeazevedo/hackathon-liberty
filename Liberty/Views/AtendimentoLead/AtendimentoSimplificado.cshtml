@@ -52,14 +52,14 @@
 
         <table>
             <tr>
-                @if (Model.Lead.Atendido)
+                @*@if (Model.Lead.Atendido)
                 {
                     <td><input type="submit" class="btn btn-primary" value="Alterar cotação" /></td>
                 }
                 else
-                {
+                {*@
                     <td><input type="submit" class="btn btn-primary" value="Fazer cotação" /></td>
-                }
+         
 
                 <td>
                     @using (Html.BeginForm("Index", "AtendimentoLead"))
