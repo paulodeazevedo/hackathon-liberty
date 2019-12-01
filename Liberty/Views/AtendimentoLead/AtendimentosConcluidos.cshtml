@@ -1,0 +1,58 @@
+﻿@model List<Cliente>
+
+@{
+    ViewData["Title"] = "Atendimentos Concluidos";
+}
+
+@{
+    string dataInicio = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).ToString("yyyy-MM-dd");
+    string dataFim = (new DateTime(DateTime.Now.Year, DateTime.Now.Month,
+    DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month))).ToString("yyyy-MM-dd");
+}
+
+<h1>Atendimentos Concluídos</h1>
+
+@using (Html.BeginForm("FiltrarAtendimentosConcluidos", "AtendimentoLead"))
+{
+    <div class="row">
+        <div class="">
+            Início
+            <input id="dateInicio" type="date" class="form-control date" value="@dataInicio">
+        </div>
+        <div class="ml-1">
+            Fim
+            <input id="dateFim" type="date" class="form-control date" value="@dataFim">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary ml-1" style="margin-top: 24px;">Buscar</button>
+
+        </div>
+    </div>
+}
+
+
+@if (Model != null && Model[0].Segurado != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Produto</th>
+                <th>Data Encerramento</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model)
+                {
+                    <td>@item.Segurado.Nome</td>
+                    <td>@item.Lead.Ramo</td>
+                    <td>@item.Lead.VencimentoLead</td>
+                    <td><button class="btn btn-primary">Visualizar</button></td>
+                }
+            </tr>
+        </tbody>
+    </table>
+
+}

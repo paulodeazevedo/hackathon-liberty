@@ -69,5 +69,6 @@ namespace Liberty.Models
         public string Ramo { get; set; }
         public bool Atendido { get; set; }
         public string Tipo { get; set; }
+        public bool Finalizado { get; set; }
     }
 }

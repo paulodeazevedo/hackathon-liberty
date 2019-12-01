@@ -17,7 +17,7 @@ namespace Liberty.Controllers
             List<Cliente> listClientes = dbContext.Cliente
                 .Find(_ => true).ToList()
                 .Where(x => x.Lead != null && x.Lead.Atendido == false)
-                .OrderBy(x => x.Lead.VencimentoLead != null)
+                .OrderBy(x => x.Lead.VencimentoLead)
                 .ToList();
 
             return View(listClientes);
@@ -26,14 +26,14 @@ namespace Liberty.Controllers
         public IActionResult Atendimento(string idCliente)
         {
             ObjectId _id = new ObjectId(idCliente);
-            
+
             MongoDbContext dbContext = new MongoDbContext();
             var cliente = dbContext.Cliente.Find(x => x.Id == _id).FirstOrDefault();
 
             cliente.Lead.Atendido = true;
             cliente.Lead.StatusLead = "Em andamento";
             var result = dbContext.Cliente.FindOneAndReplace<Cliente>(c => c.Id == _id, cliente);
-            
+
             if (cliente != null && cliente.EnviarFormulario == "Sim")
             {
                 return View("Atendimento", cliente);
@@ -58,6 +58,22 @@ namespace Liberty.Controllers
         public IActionResult Cardapio()
         {
             return View("cardapio");
+        }
+
+        public IActionResult AtendimentosConcluidos()
+        {
+            return View();
+        }
+
+        public IActionResult FiltrarAtendimentosConcluidos(DateTime dataInicio, DateTime dataFim)
+        {
+            MongoDbContext dbContext = new MongoDbContext();
+            List<Cliente> listClientes = dbContext.Cliente
+                .Find(_ => true).ToList()
+                .OrderBy(x => x.Lead.VencimentoLead)
+                .ToList();
+
+            return View("AtendimentosConcluidos", listClientes);
         }
     }
 }
