@@ -28,7 +28,7 @@ namespace Liberty.Controllers
             ObjectId _id = new ObjectId(idCliente);
             
             MongoDbContext dbContext = new MongoDbContext();
-            List<Cliente> listClientes = dbContext.Cliente.Find(x => x.Id == _id).ToList();
+            Cliente listClientes = dbContext.Cliente.Find(x => x.Id == _id).FirstOrDefault();
 
             return View(listClientes);
         }
