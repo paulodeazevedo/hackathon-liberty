@@ -17,6 +17,8 @@ namespace Liberty.Models
         public Veiculo Veiculo { get; set; }
         public string EnviarFormulario { get; set; }
         public Lead Lead { get; set; }
+        public string SeguroNovo { get; set; }
+        public string ApoliceAntiga { get; set; }
     }
 
     public class DadosCliente

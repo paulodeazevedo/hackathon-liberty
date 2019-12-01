@@ -16,11 +16,11 @@
         <div class="col-sm-10">
             <div class="form-check">
                 <div>
-                    @Html.RadioButtonFor(model => model.EnviarFormulario, "Sim", new { @class = "form-check-input" })
+                    @Html.RadioButtonFor(model => model.SeguroNovo, "Sim", new { @class = "form-check-input" })
                     <label class="form-check-label" style="margin-right:30px">
                         Seguro Novo
                     </label>
-                    @Html.RadioButtonFor(model => model.EnviarFormulario, "Não", new { @class = "form-check-input" })
+                    @Html.RadioButtonFor(model => model.SeguroNovo, "Não", new { @class = "form-check-input" })
                     <label class="form-check-label">
                         Renovação
                     </label>
@@ -32,7 +32,7 @@
         <label class="col-sm-2 col-form-label"> </label>
         <div class="col-sm-10">
             <label class="form-label">Em caso de renovação, favor informar no campo abaixo a SEGURADORA e a vigência FINAL da apólice em questão. Nestes casos a cotação deverá ser diferenciada, visando o melhor preço para o cliente.</label>
-            @Html.TextAreaFor(a => a.Segurado.Nome, new { @class = "form-control" })
+            @Html.TextAreaFor(a => a.ApoliceAntiga, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group row">
