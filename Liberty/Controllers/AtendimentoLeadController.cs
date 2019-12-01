@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Liberty.Models;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace Liberty.Controllers
 {
@@ -11,83 +13,24 @@ namespace Liberty.Controllers
     {
         public IActionResult Index()
         {
-            var model = new List<Cliente>()
-            {
-                new Cliente()
-                {
-                    Segurado = new DadosCliente()
-                    {
-                        Nome = "João Silva"
-                    },
-                    Lead = new Lead()
-                    {
-                        IdCorretorResponsavel = 1,
-                        CriacaoLead = DateTime.Now,
-                        EmailCorretor = "paulocorretor@corretora.com",
-                        NomeCorretor = "Paulo Corretor",
-                        StatusLead = "Pendente",
-                        VencimentoLead = DateTime.Now.AddHours(1).AddMinutes(32),
-                        Ramo = "Auto"
-                    }
-                },
-                new Cliente()
-                {
-                    Segurado = new DadosCliente()
-                    {
-                        Nome = "Camila Insegura"
-                    },
-                    Lead = new Lead()
-                    {
-                        IdCorretorResponsavel = 1,
-                        CriacaoLead = DateTime.Now,
-                        EmailCorretor = "paulocorretor@corretora.com",
-                        NomeCorretor = "Paulo Corretor",
-                        StatusLead = "Pendente",
-                        VencimentoLead = DateTime.Now.AddHours(2),
-                        Ramo = "Vida"
-                    }
-                }
-            };
-            return View(model.OrderBy(x => x.Lead.VencimentoLead).ToList());
+            MongoDbContext dbContext = new MongoDbContext();
+            List<Cliente> listClientes = dbContext.Cliente
+                .Find(_ => true).ToList()
+                .Where(x => x.Lead != null)
+                .OrderBy(x => x.Lead.VencimentoLead != null)
+                .ToList();
+
+            return View(listClientes);
         }
 
-        public IActionResult Atendimento()
+        public IActionResult Atendimento(string idCliente)
         {
-            var response = new Cliente()
-            {
-                Segurado = new DadosCliente()
-                {
-                    Nome = "João Silva",
-                    Telefone = "(11) 9 7159-5732",
-                    Email = "joaosilva@gmail.com",
-                    Cep = "04563013",
-                    Cpf = "099.088.365-48",
-                    Cnh = "Sim",
-                    DataNascimento = "10/10/2000"
-                },
-                Veiculo = new Veiculo()
-                {
-                    Marca = "VW",
-                    Modelo = "Fusca",
-                    Ano = "1989"
-                },
-                Lead = new Lead()
-                {
-                    IdCorretorResponsavel = 1,
-                    CriacaoLead = DateTime.Now,
-                    EmailCorretor = "paulocorretor@corretora.com",
-                    NomeCorretor = "Paulo Corretor",
-                    StatusLead = "Pendente",
-                    VencimentoLead = DateTime.Now.AddHours(1).AddMinutes(32),
-                    Ramo = "Auto"
-                },
-                Condutor = new DadosCliente(),
-                EnviarFormulario = string.Empty,
-                
-                Questionario = new QuestionarioRisco()
-            };
+            ObjectId _id = new ObjectId(idCliente);
+            
+            MongoDbContext dbContext = new MongoDbContext();
+            List<Cliente> listClientes = dbContext.Cliente.Find(x => x.Id == _id).ToList();
 
-            return View( response);
+            return View(listClientes);
         }
     }
 }
