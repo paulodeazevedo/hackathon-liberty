@@ -28,6 +28,17 @@ namespace Liberty.Controllers
             }
             else
             {
+                entity.Lead = new Lead()
+                {
+                    CriacaoLead = DateTime.Now,
+                    EmailCorretor = "corretorseguro@corretora.com",
+                    IdCorretorResponsavel = 1,
+                    NomeCorretor = "João Silva",
+                    Ramo = "Auto",
+                    StatusLead = "Pendente",
+                    VencimentoLead = DateTime.Now.AddHours(2)
+                };
+
                 dbContext.Cliente.InsertOne(entity);
             }
 
@@ -38,6 +49,18 @@ namespace Liberty.Controllers
         public IActionResult Upload(Cliente entity)
         {
             MongoDbContext dbContext = new MongoDbContext();
+
+            entity.Lead = new Lead()
+            {
+                CriacaoLead = DateTime.Now,
+                EmailCorretor = "corretorseguro@corretora.com",
+                IdCorretorResponsavel = 1,
+                NomeCorretor = "João Silva",
+                Ramo = "Auto",
+                StatusLead = "Pendente",
+                VencimentoLead = DateTime.Now.AddHours(2)
+            };
+
             dbContext.Cliente.InsertOne(entity);
             return View();
         }
