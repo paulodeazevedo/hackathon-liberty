@@ -55,5 +55,9 @@ namespace Liberty.Controllers
 
             return View("AtendimentoEmAndamento", listClientes);
         }
+        public IActionResult Cardapio()
+        {
+            return View("cardapio");
+        }
     }
 }
