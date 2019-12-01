@@ -15,10 +15,11 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@Html.Label(item.Segurado.Nome)</td>
-            <td>@Html.Label(item.Lead.Ramo)</td>
-            <td>@Html.Label(item.Lead.StatusLead)</td>          
-        </tr>
+<tr>
+    <td>@Html.Label(item.Segurado.Nome)</td>
+    <td>@Html.Label(item.Lead.Ramo)</td>
+    <td>@Html.Label(item.Lead.StatusLead)</td>
+    <td><button class="btn btn-primary">Visualizar</button></td>
+</tr>
     }
 </table>
