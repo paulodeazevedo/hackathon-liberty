@@ -31,7 +31,7 @@
 }
 
 
-@if (Model != null && Model[0].Segurado != null)
+@if (Model != null && Model.Count > 0 && Model[0].Segurado != null)
 {
     <table class="table">
         <thead>
