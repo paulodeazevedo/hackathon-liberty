@@ -8,133 +8,213 @@
 <h1>Atendimento</h1>
 
 <div class="form-group">
-    <div>Dados Segurado</div>
-    <div class="form-inline">
-        <label>Nome Segurado</label>
-        @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control" })
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nome: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
     </div>
-    <div class="form-inline">
-        <label>CPF</label>
-        @Html.Label(Model.Segurado.Cpf)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CPF: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Cpf, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
     </div>
-    <div class="form-inline">
-        <label>Sexo</label>
-        @Html.Label(Model.Segurado.Sexo)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Sexo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Sexo, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
     </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Segurado.DataNascimento)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Data Nascimento: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.DataNascimento, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
     </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Segurado.EstadoCivil)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Estado Civil: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.EstadoCivil, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
     </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Segurado.Cep)
-    </div>
-
-    <div>Dados Condutor</div>
-
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.Nome)
-    </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.Cpf)
-    </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.Cnh)
-    </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.Cep)
-    </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.DataNascimento)
-    </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.Sexo)
-    </div>
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Condutor.EstadoCivil)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CEP: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Cep, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
     </div>
 
-    <div>Questionário de Risco</div>
+    <br />
+    <br />
+    <h3>Dados Condutor</h3>
+    <br />
 
-    <div class="form-inline">
-        <label></label>
-        @Html.Label(Model.Questionario.ResideEm)
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.CepPernoiteVeiculo)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.GaragemResidencial)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.GaragemComercial)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.GaragemCursos)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.DistanciaResidenciaTrabalho)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.ResidePessoas)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Questionario.TempoHabilitacao)
-        </div>
-
-        <div>Veículo Segurado</div>
-
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Veiculo.ZeroKm)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Veiculo.Modelo)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Veiculo.Chassi)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Veiculo.Placa)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Veiculo.Ano)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Veiculo.PossuiAlarme)
-        </div>
-
-        <div>Dados para Contato</div>
-
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Segurado.Email)
-        </div>
-        <div class="form-inline">
-            <label></label>
-            @Html.Label(Model.Segurado.Telefone)
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nome: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Nome, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
         </div>
     </div>
-</div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CPF: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Cpf, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CNH: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Cnh, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">CEP: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Cep, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Data Nascimento: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.DataNascimento, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Sexo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.Sexo, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Estado Civil: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Condutor.EstadoCivil, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <h3>Questionário de Risco</h3>
+    <br />
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Reside em: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.ResideEm, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Cep Pernoite Veiculo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.CepPernoiteVeiculo, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Garagem Residencial: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.GaragemResidencial, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Garagem Comercial: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.GaragemComercial, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Garagem Cursos: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.GaragemCursos, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Distancia Residencia Trabalho: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.DistanciaResidenciaTrabalho, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Reside Pessoa entre 17 e 21 anos : </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.ResidePessoas, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Tem Habilitação: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Questionario.TempoHabilitacao, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <h3>Veículo Segurado</h3>
+    <br />
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">0 Km: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.ZeroKm, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Modelo: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Modelo, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Chassi: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Chassi, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Placa: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Placa, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Ano: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Veiculo.Ano, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Possui Alarme: </label>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <div>
+                    @Html.RadioButtonFor(model => model.Veiculo.PossuiAlarme, "Sim", new { @class = "form-check-input", disabled = "disabled", @readonly = "readonly" })
+                    <label class="form-check-label" style="margin-right:30px">
+                        Sim
+                    </label>
+                    @Html.RadioButtonFor(model => model.Veiculo.PossuiAlarme, "Não", new { @class = "form-check-input", disabled = "disabled", @readonly = "readonly" })
+                    <label class="form-check-label">
+                        Não
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <h3>Dados para Contato</h3>
+    <br />
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">E-mail: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Email, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Telefone: </label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(model => model.Segurado.Telefone, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+        </div>
+    </div>
