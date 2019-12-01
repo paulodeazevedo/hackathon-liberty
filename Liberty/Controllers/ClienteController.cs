@@ -36,13 +36,14 @@ namespace Liberty.Controllers
                     NomeCorretor = "João Silva",
                     Ramo = "Auto",
                     StatusLead = "Pendente",
-                    VencimentoLead = DateTime.Now.AddHours(2)
+                    VencimentoLead = DateTime.Now.AddHours(2),
+                    Atendido = false
                 };
 
                 dbContext.Cliente.InsertOne(entity);
             }
 
-            return RedirectToAction("Index", "Cliente");
+            return View("CadastroFinalizado");
         }
 
         [HttpPost]
@@ -58,11 +59,12 @@ namespace Liberty.Controllers
                 NomeCorretor = "João Silva",
                 Ramo = "Auto",
                 StatusLead = "Pendente",
-                VencimentoLead = DateTime.Now.AddHours(2)
+                VencimentoLead = DateTime.Now.AddHours(2),
+                Atendido = false
             };
 
             dbContext.Cliente.InsertOne(entity);
-            return View();
+            return View("CadastroFinalizado");
         }
 
         [HttpGet]
