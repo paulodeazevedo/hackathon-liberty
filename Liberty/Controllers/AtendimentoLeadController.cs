@@ -16,7 +16,7 @@ namespace Liberty.Controllers
             MongoDbContext dbContext = new MongoDbContext();
             List<Cliente> listClientes = dbContext.Cliente
                 .Find(_ => true).ToList()
-                .Where(x => x.Lead != null)
+                .Where(x => x.Lead != null && x.Lead.Atendido == false)
                 .OrderBy(x => x.Lead.VencimentoLead != null)
                 .ToList();
 
@@ -28,9 +28,20 @@ namespace Liberty.Controllers
             ObjectId _id = new ObjectId(idCliente);
             
             MongoDbContext dbContext = new MongoDbContext();
-            Cliente listClientes = dbContext.Cliente.Find(x => x.Id == _id).FirstOrDefault();
+            var cliente = dbContext.Cliente.Find(x => x.Id == _id).FirstOrDefault();
 
-            return View(listClientes);
+            cliente.Lead.Atendido = true;
+            var result = dbContext.Cliente.FindOneAndReplace<Cliente>(c => c.Id == _id, cliente);
+            
+            if (cliente != null && cliente.EnviarFormulario == "Sim")
+            {
+                return View("Atendimento", cliente);
+            }
+            else
+            {
+                return View("AtendimentoSimplificado", cliente);
+            }
+            
         }
     }
 }

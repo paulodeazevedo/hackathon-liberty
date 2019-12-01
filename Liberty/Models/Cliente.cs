@@ -16,7 +16,6 @@ namespace Liberty.Models
         public QuestionarioRisco Questionario { get; set; }
         public Veiculo Veiculo { get; set; }
         public string EnviarFormulario { get; set; }
-
         public Lead Lead { get; set; }
     }
 
@@ -68,5 +67,6 @@ namespace Liberty.Models
         public string EmailCorretor { get; set; }
         public string StatusLead { get; set; }
         public string Ramo { get; set; }
+        public bool Atendido { get; set; }
     }
 }
