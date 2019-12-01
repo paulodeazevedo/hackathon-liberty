@@ -40,6 +40,18 @@ namespace Liberty.Controllers
                     Atendido = false
                 };
 
+                if(!string.IsNullOrWhiteSpace(entity.SeguroNovo))
+                {
+                    if (entity.SeguroNovo.Equals("Sim"))
+                    {
+                        entity.Lead.Tipo = "Seguro novo";
+                    }
+                    else
+                    {
+                        entity.Lead.Tipo = "Renovação";
+                    }
+                }
+ 
                 dbContext.Cliente.InsertOne(entity);
             }
 

@@ -12,6 +12,8 @@
         <label class="col-sm-2 col-form-label">Nome: </label>
         <div class="col-sm-10">
             @Html.TextBoxFor(model => model.Segurado.Nome, new { @class = "form-control", maxlength = "100" })
+            @Html.HiddenFor(model => model.SeguroNovo)
+            @Html.HiddenFor(model => model.ApoliceAntiga)
         </div>
     </div>
     <div class="form-group row">
@@ -236,7 +238,7 @@
 <script>
     $(document).ready(function () {
         $("#Segurado_Telefone").mask("(99) 99999-9999");
-        $("#Segurado_Cep").mask("9999999-999");
+        $("#Segurado_Cep").mask("99999-999");
         $("#Segurado_Cpf").mask("999.999.999-99");
         $("#Segurado_DataNascimento").mask("99/99/9999");
         $("#Veiculo_Ano").mask("9999");
@@ -244,7 +246,7 @@
         $("#Questionario_CepPernoiteVeiculo").mask("9999999-999");
         $("#Condutor_Cpf").mask("999.999.999-99");
         $("#Condutor_Cnh").mask("999999999999999");
-        $("#Condutor_Cep").mask("9999999-999");
+        $("#Condutor_Cep").mask("99999-999");
         $("#Condutor_DataNascimento").mask("99/99/9999");
 
 
