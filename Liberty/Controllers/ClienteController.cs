@@ -20,6 +20,18 @@ namespace Liberty.Controllers
         [HttpPost]
         public IActionResult Add(Cliente entity)
         {
+            entity.Lead = new Lead()
+            {
+                CriacaoLead = DateTime.Now,
+                EmailCorretor = "corretorseguro@corretora.com",
+                IdCorretorResponsavel = 1,
+                NomeCorretor = "João Silva",
+                Ramo = "Auto",
+                StatusLead = "Pendente",
+                VencimentoLead = DateTime.Now.AddHours(2),
+                Atendido = false
+            };
+
             MongoDbContext dbContext = new MongoDbContext();
             //entity.Id = Guid.NewGuid();
             if (!string.IsNullOrWhiteSpace(entity.EnviarFormulario) && entity.EnviarFormulario.Equals("Sim"))
@@ -28,18 +40,6 @@ namespace Liberty.Controllers
             }
             else
             {
-                entity.Lead = new Lead()
-                {
-                    CriacaoLead = DateTime.Now,
-                    EmailCorretor = "corretorseguro@corretora.com",
-                    IdCorretorResponsavel = 1,
-                    NomeCorretor = "João Silva",
-                    Ramo = "Auto",
-                    StatusLead = "Pendente",
-                    VencimentoLead = DateTime.Now.AddHours(2),
-                    Atendido = false
-                };
-
                 if(!string.IsNullOrWhiteSpace(entity.SeguroNovo))
                 {
                     if (entity.SeguroNovo.Equals("Sim"))

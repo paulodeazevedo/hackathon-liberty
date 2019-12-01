@@ -54,5 +54,8 @@
             }
         </tbody>
     </table>
-
+    @using (Html.BeginForm("Index", "Home"))
+    {
+        <input type="submit" id="concluida" class="btn btn-primary" value="Home" />
+    }
 }
