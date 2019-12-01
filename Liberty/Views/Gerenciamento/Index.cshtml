@@ -6,7 +6,7 @@
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 
-<div>
+<div class="container">
     <div class="form-inline">
         <div id="donutchartUtilmoMes" style="width: 400px; height: 350px;"></div>
         <div id="donutchartMesAtual" style="width: 400px; height: 350px;"></div>
@@ -20,6 +20,7 @@
         </div>
     </div>
     <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+    <a style="float:right" href="/AtendimentoLead/AtendimentoEmAndamento" class="btn btn-primary">Em Andamento</a>
 
 </div>
 
@@ -95,8 +96,7 @@
 
                     var options = {
                         chart: {
-                            title: 'Company Performance',
-                            subtitle: 'Sales, Expenses, and Profit: 2014-2017'
+                            title: 'Performance de vendas'
                         },
                         colors: ['#1A1442', '#FEDA00']
                     };
