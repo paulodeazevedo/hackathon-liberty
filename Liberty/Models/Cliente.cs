@@ -68,5 +68,6 @@ namespace Liberty.Models
         public string StatusLead { get; set; }
         public string Ramo { get; set; }
         public bool Atendido { get; set; }
+        public string Tipo { get; set; }
     }
 }
