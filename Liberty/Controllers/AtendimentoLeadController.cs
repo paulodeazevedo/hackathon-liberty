@@ -41,7 +41,6 @@ namespace Liberty.Controllers
             {
                 return View("AtendimentoSimplificado", cliente);
             }
-            
         }
     }
 }
