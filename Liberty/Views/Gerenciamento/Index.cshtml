@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<div>
+    <div class="form-inline">
+        <div id="donutchartUtilmoMes" style="width: 400px; height: 350px;"></div>
+        <div id="donutchartMesAtual" style="width: 400px; height: 350px;"></div>
+        <div>
+            <div>
+                <a class="taxa-conversao-label">Taxa de conversão</a>
+            </div>
+            <div style="margin-top: -45px;">
+                <a class="taxa-conversao-value">56%</a>
+            </div>
+        </div>
+    </div>
+    <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawRenovacaoUltimoMes);
+
+    function drawRenovacaoUltimoMes() {
+        $.ajax(
+            {
+                url: "/Gerenciamento/BuscaRenovacaoUltimoMes",
+                type: "GET",
+                success: function (data) {
+                    var datas = google.visualization.arrayToDataTable(data);
+
+                    var options = {
+                        title: 'Renovações último mês',
+                        pieHole: 0.4,
+                        colors: ['#1A1442', '#FEDA00'],
+                        is3D: true,
+                        //pieSliceTextStyle: {
+                        //    color: 'white',
+                        //}
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchartUtilmoMes'));
+
+                    chart.draw(datas, options);
+                },
+                error: function (data) {
+                }
+            });
+    }
+
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawMesAtual);
+
+    function drawMesAtual() {
+        $.ajax(
+            {
+                url: "/Gerenciamento/BuscaRenovacaoMesAtual",
+                type: "GET",
+                success: function (data) {
+                    var datas = google.visualization.arrayToDataTable(data);
+
+                    var options = {
+                        title: 'Renovações mês atual',
+                        pieHole: 0.4,
+                        colors: ['#1A1442', '#FEDA00'],
+                        is3D: true
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchartMesAtual'));
+
+                    chart.draw(datas, options);
+                },
+                error: function (data) {
+                }
+            });
+    }
+
+    google.charts.load('current', { 'packages': ['bar'] });
+    google.charts.setOnLoadCallback(drawBarChart);
+
+    function drawBarChart() {
+        $.ajax(
+            {
+                url: "/Gerenciamento/BuscaGraficoBar",
+                type: "GET",
+                success: function (data) {
+                    var datas = google.visualization.arrayToDataTable(data);
+
+                    var options = {
+                        chart: {
+                            title: 'Company Performance',
+                            subtitle: 'Sales, Expenses, and Profit: 2014-2017'
+                        },
+                        colors: ['#1A1442', '#FEDA00']
+                    };
+
+                    var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+                    chart.draw(datas, google.charts.Bar.convertOptions(options));
+                },
+                error: function (data) {
+                }
+            });
+    }
+</script>
