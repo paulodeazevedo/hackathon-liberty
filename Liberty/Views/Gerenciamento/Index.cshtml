@@ -23,7 +23,6 @@
                 @using (Html.BeginForm("cardapio", "AtendimentoLead"))
                 {
                     <button type="submit" class="btn btn-primary">Sim</button>
-
                 }
 
             </div>
@@ -32,8 +31,8 @@
 </div>
 <div class="container">
     <div class="form-inline">
-        <div id="donutchartUtilmoMes" style="width: 400px; height: 350px;"></div>
-        <div id="donutchartMesAtual" style="width: 400px; height: 350px;"></div>
+        <div id="donutchartUtilmoMes" style="width: 390px; height: 400px;"></div>
+        <div id="donutchartMesAtual" style="width: 390px; height: 400px;"></div>
         <div>
             <div>
                 <a class="taxa-conversao-label">Taxa de conversão</a>
@@ -43,7 +42,8 @@
             </div>
         </div>
     </div>
-    <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+    <br>
+    <div id="columnchart_material" style="width: 1050px; height: 350px;"></div>
     <a style="float:right" href="/AtendimentoLead/AtendimentoEmAndamento" class="btn btn-primary">Em Andamento</a>
 
 </div>
@@ -72,8 +72,27 @@
                     var options = {
                         title: 'Renovações último mês',
                         pieHole: 0.4,
-                        colors: ['#1A1442', '#FEDA00'],
+                        colors: ['#1A1442', 'brown'],
                         is3D: true,
+                        pieSliceTextStyle: {
+                            fontSize: 16,
+                            fontName: 'Roboto',
+                            bold: true
+                        },
+                        titleTextStyle: {
+                            fontSize: 16,
+                            fontName: 'Roboto',
+                            bold: true,
+                            color: '#1A1442'
+                        },
+                        legend: {
+                            position: 'bottom',
+                            textStyle: {
+                                color: '#1A1442',
+                                fontSize: 16,
+                                bold: true
+                            }
+                        }
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('donutchartUtilmoMes'));
@@ -99,8 +118,27 @@
                     var options = {
                         title: 'Renovações mês atual',
                         pieHole: 0.4,
-                        colors: ['#1A1442', '#FEDA00'],
-                        is3D: true
+                        colors: ['#1A1442', 'brown'],
+                        is3D: true,
+                        pieSliceTextStyle: {
+                            fontSize: 16,
+                            fontName: 'Roboto',
+                            bold: true
+                        },
+                        titleTextStyle: {
+                            fontSize: 16,
+                            fontName: 'Roboto',
+                            bold: true,
+                            color: '#1A1442'
+                        },
+                        legend: {
+                            position: 'bottom',
+                            textStyle: {
+                                color: '#1A1442',
+                                fontSize: 16,
+                                bold: true
+                            }
+                        }
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('donutchartMesAtual'));
@@ -127,7 +165,26 @@
                         chart: {
                             title: 'Performance de vendas'
                         },
-                        colors: ['#1A1442', '#FEDA00']
+                        colors: ['#1A1442', 'brown'],
+                        pieSliceTextStyle: {
+                            fontSize: 16,
+                            fontName: 'Roboto',
+                            bold: true
+                        },
+                        titleTextStyle: {
+                            fontSize: 20,
+                            fontName: 'Roboto',
+                            bold: true,
+                            color: '#1A1442'
+                        },
+                        legend: {
+                            position: 'bottom',
+                            textStyle: {
+                                color: '#1A1442',
+                                fontSize: 16,
+                                bold: true
+                            }
+                        }
                     };
 
                     var chart = new google.charts.Bar(document.getElementById('columnchart_material'));

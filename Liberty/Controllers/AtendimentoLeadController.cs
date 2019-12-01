@@ -69,7 +69,7 @@ namespace Liberty.Controllers
         {
             MongoDbContext dbContext = new MongoDbContext();
             List<Cliente> listClientes = dbContext.Cliente
-                .Find(_ => true).ToList()
+                .Find(x => x.Lead.Finalizado == true).ToList()
                 .OrderBy(x => x.Lead.VencimentoLead)
                 .ToList();
 
