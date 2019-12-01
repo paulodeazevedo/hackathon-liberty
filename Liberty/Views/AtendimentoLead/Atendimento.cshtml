@@ -222,7 +222,16 @@
         <div class="col-sm-10">
             <table>
                 <tr>
-                    <td> <input type="submit" class="btn btn-primary" value="Fazer cotação" /></td>
+                    @if (Model.Lead.Atendido)
+                    {
+                        <div>Cotação em andamento</div>
+                        <td> <input type="submit" class="btn btn-primary" value="Alterar cotação" /></td>
+                    }
+                    else
+                    {
+                        <td> <input type="submit" class="btn btn-primary" value="Fazer cotação" /></td>
+                    }
+
                     <td>
                         @using (Html.BeginForm("Index", "AtendimentoLead"))
                         {

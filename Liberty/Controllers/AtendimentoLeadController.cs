@@ -31,6 +31,7 @@ namespace Liberty.Controllers
             var cliente = dbContext.Cliente.Find(x => x.Id == _id).FirstOrDefault();
 
             cliente.Lead.Atendido = true;
+            cliente.Lead.StatusLead = "Em andamento";
             var result = dbContext.Cliente.FindOneAndReplace<Cliente>(c => c.Id == _id, cliente);
             
             if (cliente != null && cliente.EnviarFormulario == "Sim")
@@ -41,6 +42,18 @@ namespace Liberty.Controllers
             {
                 return View("AtendimentoSimplificado", cliente);
             }
+        }
+
+        public IActionResult AtendimentoEmAndamento()
+        {
+            MongoDbContext dbContext = new MongoDbContext();
+            List<Cliente> listClientes = dbContext.Cliente
+                .Find(_ => true).ToList()
+                .Where(x => x.Lead != null && x.Lead.Atendido == true)
+                .OrderBy(x => x.Lead.VencimentoLead != null)
+                .ToList();
+
+            return View("AtendimentoEmAndamento");
         }
     }
 }

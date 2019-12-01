@@ -1,0 +1,25 @@
+﻿@model List<Cliente>
+
+@{
+    ViewData["Title"] = "AtendimentoEmAndamento";
+}
+
+<h1>Atendimentos em andamento</h1>
+
+<table class="table">
+    <tr>
+        <th>Nome Cliente</th>
+        <th>Ramo</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.Label(item.Segurado.Nome)</td>
+            <td>@Html.Label(item.Lead.Ramo)</td>
+            <td>@Html.Label(item.Lead.StatusLead)</td>
+            <td><a href="/AtendimentoLead/Atendimento?idCliente=@item.Id" class="btn btn-primary">Atender</a></td>
+        </tr>
+    }
+</table>
