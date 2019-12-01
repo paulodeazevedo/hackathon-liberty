@@ -30,7 +30,15 @@ namespace Liberty.Controllers
             MongoDbContext dbContext = new MongoDbContext();
             Cliente listClientes = dbContext.Cliente.Find(x => x.Id == _id).FirstOrDefault();
 
-            return View(listClientes);
+            if(listClientes.EnviarFormulario == "Sim")
+            {
+                return View("Atendimento", listClientes);
+            }
+            else
+            {
+                return View("AtendimentoSimplificado", listClientes);
+            }
+            
         }
     }
 }

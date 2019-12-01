@@ -1,0 +1,49 @@
+﻿@model Cliente
+
+@{
+    ViewData["Title"] = "Atendimento";
+}
+
+
+<h1>Atendimento</h1>
+
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label">Nome: </label>
+    <div class="col-sm-11">
+        @Html.TextBoxFor(a => a.Segurado.Nome, new { @class = "form-control", disabled = "disabled", @readonly = "readonly",  maxlength = "100" })
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label">Telefone: </label>
+    <div class="col-sm-11">
+        @Html.TextBoxFor(a => a.Segurado.Telefone, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label">Email: </label>
+    <div class="col-sm-11">
+        @Html.TextBoxFor(a => a.Segurado.Email, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", maxlength = "100" })
+    </div>
+</div>
+<br />
+<br />
+<h3>Veículo</h3>
+<br />
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label">Marca: </label>
+    <div class="col-sm-11">
+        @Html.TextBoxFor(a => a.Veiculo.Marca, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", maxlength = "100" })
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label">Modelo: </label>
+    <div class="col-sm-11">
+        @Html.TextBoxFor(a => a.Veiculo.Modelo, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", maxlength = "100" })
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label">Ano: </label>
+    <div class="col-sm-11">
+        @Html.TextBoxFor(a => a.Veiculo.Ano, new { @class = "form-control", disabled = "disabled", @readonly = "readonly" })
+    </div>
+</div>
